@@ -78,13 +78,11 @@ body, html {
     background: ${props => (props.theme === "white" ? "#15181c" : "white")};
     color: ${props => (props.theme === "white" ? "white" : "black")};
     margin: 0;
-
-    word-wrap: break-word;
-    font-kerning: normal;
     max-width: 100%;
     overflow-x: hidden;
     line-height: 1.3;
     letter-spacing: 0;
+    
   
   }
 
@@ -227,6 +225,7 @@ const PageContainer = styled.div`
   margin-left: 30%;
   margin-right: 30%;
   padding-top: 20px;
+  opacity: 0;
   @media (max-width: 1400px) {
     margin-left: 20%;
     margin-right: 20%;

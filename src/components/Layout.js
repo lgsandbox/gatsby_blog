@@ -5,14 +5,28 @@ import useSiteMetadata from "../static_queries/useSiteMetadata"
 import { PageContainer } from "../styles/global.styles"
 import { GlobalStyles } from "../styles/global.styles"
 import "../styles/fonts.css"
+import anime from 'animejs/lib/anime.es.js';
+import { useEffect } from "react"
 
 export default function Layout(props) {
 
+  
+  useEffect(() => {
+    setTimeout(() => {
+      anime({
+        targets: '#dank',
+        easing: 'easeInOutSine',
+        opacity: 1,
+        duration: 800
+      });
+    }, 100);
+    }
+)
 
   const { title, description } = useSiteMetadata()
   return (
   
-    <PageContainer>
+    <PageContainer id="dank">
       <GlobalStyles />
     <section
       className={`no`}
