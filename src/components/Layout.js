@@ -17,7 +17,7 @@ export default function Layout(props) {
         targets: '#dank',
         easing: 'easeInOutSine',
         opacity: 1,
-        duration: 800
+        duration: 400
       });
     }, 400);
     }
