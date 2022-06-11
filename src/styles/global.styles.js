@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { createGlobalStyle } from "styled-components"
 
+
 const GlobalStyles = createGlobalStyle`
+
   
 :root {
   --maxWidth-none: "none";
@@ -63,19 +65,26 @@ const GlobalStyles = createGlobalStyle`
   --color-heading: #1a202c;
   --color-heading-black: black;
   --color
+}
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
 
 body, html {
-    background: white;
-    color: black;
-    font-family: "Roboto", sans-serif;
-    font-size: 1em;
-    font-weight: bold;
+    box-sizing: border-box;
+    background: ${props => (props.theme === "white" ? "#15181c" : "white")};
+    color: ${props => (props.theme === "white" ? "white" : "black")};
     margin: 0;
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
     max-width: 100%;
     overflow-x: hidden;
-
-
+    transition: all 0.50s linear;
+    line-height: 1.3;
+    letter-spacing: 0;
   
   }
 
@@ -94,11 +103,10 @@ body, html {
   
   h1,
   h2,
-  h3,
   h4,
   h5,
   h6 {
-    font-family: var(--font-heading);
+
     margin-top: var(--spacing-12);
     margin-bottom: var(--spacing-6);
     line-height: var(--lineHeight-tight);
@@ -110,38 +118,21 @@ body, html {
   h4,
   h5,
   h6 {
-    font-weight: var(--fontWeight-bold);
-    color: var(--color-heading);
+
+    color: ${props => (props.theme === "black" ? "black" : "white")};
   }
   
   h1 {
-    font-weight: var(--fontWeight-black);
+
     font-size: var(--fontSize-6);
-    color: var(--color-heading-black);
-  }
-  
-  h2 {
-    font-size: var(--fontSize-5);
-  }
-  
-  h3 {
-    font-size: var(--fontSize-4);
-  }
-  
-  h4 {
-    font-size: var(--fontSize-3);
-  }
-  
-  h5 {
-    font-size: var(--fontSize-2);
-  }
-  
-  h6 {
-    font-size: var(--fontSize-1);
+    color: ${props => (props.theme === "black" ? "black" : "white")};
+    margin-top: 10px;
+    margin-bottom: 0px;
+    
   }
   
   h1 > a {
-    color: inherit;
+    color: ${props => (props.theme === "black" ? "black" : "white")};
     text-decoration: none;
   
   }
@@ -152,10 +143,8 @@ body, html {
   h5 > a,
   h6 > a {
     text-decoration: none;
-    color: inherit;
+    color: ${props => (props.theme === "black" ? "black" : "white")};
   }
-  
-  /* Prose */
   
   p {
     line-height: var(--lineHeight-relaxed);
@@ -214,16 +203,7 @@ body, html {
     list-style-position: inside;
   }
   
-  table {
-    width: 100%;
-    margin-bottom: var(--spacing-8);
-    border-collapse: collapse;
-    border-spacing: 0.25rem;
-  }
-  
-  table thead tr th {
-    border-bottom: 1px solid var(--color-accent);
-  }
+
   
   
   a {
@@ -235,22 +215,39 @@ body, html {
   a:hover,
   a:focus {
     text-decoration: none;
+    color: lightblue;
   }
   
-
-
 `
 
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 25%;
-  margin-right: 25%;
-  @media (max-width: 768px) {
-    margin-left: 10px;
-    margin-right: 10px;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding-top: 20px;
+  @media (max-width: 1400px) {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  @media (max-width: 728px) {
+    margin-left: 20px;
+    margin-right: 20px;
   }
   
+`
+
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  `
+
+const SpacedRow = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+padding-bottom: 20px;
+border-bottom: 1px solid #e6e6e6;
 `
 
 const Title = styled.h1`
@@ -278,14 +275,37 @@ const Space = styled.section`
   marging: 20px;
 
 `
-const Right = styled.section`
-  margin-left: auto;
-`
-const Dark = styled.section`
-  color: #30393b;`
 
-export { Dark, 
-  Right, Wrapper, Title, 
+const Button = styled.button`
+width: 100%;
+height: 40px;
+display: inline-block;
+border-radius: 3px;
+margin: 0.2rem .5rem;
+margin-top: 10px;
+width: 3rem;
+background: (props.theme === "white" ? "white" : "black");
+color: ${props => (props.theme === "white" ? "white" : "black")};
+border: 2px solid ${props => (props.theme === "black" ? "#669a9e" : "#470035")};
+margin-bottom: 0px;
+cursor: pointer;
+@media (max-width: 726px) {
+  margin-top: 40px;
+}
+
+  `
+const Vertical = styled.div`
+
+
+@media (min-width: 530px) {
+  margin-top: auto;
+  margin-bottom: 7px;
+}
+`
+
+export { Wrapper, Title, 
   Break, Container, Space, 
-  GlobalStyles, PageContainer,
+  GlobalStyles, PageContainer, Row,
+  SpacedRow, Vertical,
+  Button,
 }

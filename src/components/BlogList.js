@@ -1,33 +1,29 @@
 import React from "react"
 import { Link } from "gatsby"
 import useBlogData from "../static_queries/useBlogData"
-import Img from 'gatsby-image'
+
 
 export default function BlogList() {
   const blogData = useBlogData()
   function renderBlogData() {
     return (
       <div>
+  
         {blogData
           .filter(blog => blog.node.frontmatter.title !== "")
           .map(blog => {
             return (
               <Link to={`/blog/${blog.node.fields.slug}`} key={blog.node.id}>
-                <li>
+                <div>
                   <div>
-                    <Img 
-                      fluid={
-                        blog.node.frontmatter.hero_image
-                      }
-                      alt={blog.node.frontmatter.title}
-                    />
+             
                   </div>
-                  <div className={"no"}>
+                  <div style={{paddingBottom: "5px"}}>
                     <h2>{blog.node.frontmatter.title}</h2>
                     <h3>{blog.node.frontmatter.date}</h3>
                     <p>{blog.node.excerpt}</p>
                   </div>
-                </li>
+                </div>
               </Link>
             )
           })}

@@ -2,10 +2,17 @@ import React from "react"
 import Header from "./Header"
 import Helmet from "react-helmet"
 import useSiteMetadata from "../static_queries/useSiteMetadata"
+import { PageContainer } from "../styles/global.styles"
+import { GlobalStyles } from "../styles/global.styles"
 
 export default function Layout(props) {
+
+
   const { title, description } = useSiteMetadata()
   return (
+  
+    <PageContainer>
+      <GlobalStyles />
     <section
       className={`no`}
       style={{
@@ -18,7 +25,9 @@ export default function Layout(props) {
         <meta name="description" content={description} />
       </Helmet>
       <Header page={props.page} title={title} />
-      <div className={"whywouldyouever"}>{props.children}</div>
+      <div>{props.children}</div>
     </section>
+    </PageContainer>
+  
   )
 }
