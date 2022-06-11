@@ -1,1 +1,1 @@
-import "./src/styles/fonts.css"
+import "@fontsource/roboto"

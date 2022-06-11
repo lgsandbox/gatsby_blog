@@ -78,15 +78,16 @@ body, html {
     background: ${props => (props.theme === "white" ? "#15181c" : "white")};
     color: ${props => (props.theme === "white" ? "white" : "black")};
     margin: 0;
-    font-family: Roboto, sans-serif;
-    font-weight: bold;
+
+    word-wrap: break-word;
+    font-kerning: normal;
     max-width: 100%;
     overflow-x: hidden;
-    transition: all 0.50s linear;
     line-height: 1.3;
     letter-spacing: 0;
   
   }
+
 
   footer {
     padding: var(--spacing-6) var(--spacing-0);
