@@ -10,18 +10,6 @@ import { useEffect } from "react"
 
 export default function Layout(props) {
 
-  
-  useEffect(() => {
-    setTimeout(() => {
-      anime({
-        targets: '#dank',
-        easing: 'linear',
-        opacity: 1,
-        duration: 400
-      });
-    }, 400);
-    } , [])
-
 
   const { title, description } = useSiteMetadata()
   return (
