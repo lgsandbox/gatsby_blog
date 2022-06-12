@@ -225,7 +225,6 @@ const PageContainer = styled.div`
   margin-left: 30%;
   margin-right: 30%;
   padding-top: 20px;
-  opacity: 0;
   @media (max-width: 1400px) {
     margin-left: 20%;
     margin-right: 20%;
