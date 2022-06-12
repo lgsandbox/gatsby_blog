@@ -1,13 +1,30 @@
 import React from "react"
 import { Link } from "gatsby"
 import useBlogData from "../static_queries/useBlogData"
-
+import { useEffect } from "react"
+import anime from "animejs"
+import { PageContainer2 } from "../styles/global.styles"
 
 export default function BlogList() {
   const blogData = useBlogData()
+
+  useEffect(() => {
+    setTimeout(() => {
+      anime({
+        targets: '#dank',
+        easing: 'linear',
+        opacity: 1,
+        duration: 400
+      });
+    }, 400);
+    } , [])
+
   function renderBlogData() {
+
+    
+      
     return (
-      <div>
+      <PageContainer2 id="dank">
   
         {blogData
           .filter(blog => blog.node.frontmatter.title !== "")
@@ -27,7 +44,7 @@ export default function BlogList() {
               </Link>
             )
           })}
-      </div>
+      </PageContainer2>
     )
   }
   return (

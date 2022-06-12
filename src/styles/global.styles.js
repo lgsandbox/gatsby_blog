@@ -235,7 +235,10 @@ const PageContainer = styled.div`
   }
   
 `
-
+const PageContainer2 = styled.div`
+  opacity: 0;
+  
+`
 const Row = styled.div`
   display: flex;
   flex-direction: row;
@@ -306,5 +309,5 @@ export { Wrapper, Title,
   Break, Container, Space, 
   GlobalStyles, PageContainer, Row,
   SpacedRow, Vertical,
-  Button,
+  Button, PageContainer2,
 }

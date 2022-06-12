@@ -2,10 +2,25 @@ import React from "react"
 import Layout from "../components/Layout"
 import { graphql, Link } from "gatsby"
 import useBlogData from '../static_queries/useBlogData'
+import { useEffect } from "react"
+import anime from "animejs"
+import { PageContainer2 } from "../styles/global.styles"
 
 
 
 export default function Blog(props) {
+
+  useEffect(() => {
+    setTimeout(() => {
+      anime({
+        targets: '#dank',
+        easing: 'linear',
+        opacity: 1,
+        duration: 400
+      });
+    }, 400);
+    } , [])
+
   const data = props.data.markdownRemark
   const allBlogData = useBlogData()
   const nextSlug = getNextSlug(data.fields.slug)
@@ -24,8 +39,9 @@ export default function Blog(props) {
   }
 
   return (
+  
     <Layout>
-    
+      <PageContainer2 id="dank">
       <article >
         <figure >
         </figure>
@@ -48,7 +64,9 @@ export default function Blog(props) {
           </Link>
         </div>
       </article>
+      </PageContainer2>
     </Layout>
+
   )
 }
 
