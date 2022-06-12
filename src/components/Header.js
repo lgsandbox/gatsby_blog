@@ -10,7 +10,7 @@ import { MdBrightness5, MdBrightness4 } from "react-icons/md"
 
 export default function Header(props) {
 
-  const [theme, setTheme] = useState("black")
+ /**  
   
   const themeHandler = () => {
   if (theme === "black") { setTheme("white") 
@@ -19,7 +19,8 @@ export default function Header(props) {
   else if (theme === "white") { setTheme("black") 
   localStorage.setItem(theme, JSON.stringify(theme));}
 }
-
+**/
+const [theme, setTheme] = useState("black")
 const isDarkTheme = theme === "black";
 
   return (
@@ -33,9 +34,8 @@ const isDarkTheme = theme === "black";
           <h1>Land.on The Open Web</h1>
         </Link>
         <div>
- 
-        <GlobalStyles theme={theme} setTheme={setTheme}/>
-        <Button onClick={themeHandler} >
+
+        <Button >
         {isDarkTheme ?
           <MdBrightness4/> :
           <MdBrightness5/>}
@@ -45,10 +45,10 @@ const isDarkTheme = theme === "black";
         </div>
         </SpacedRow>
 
-        <Row style={{paddingTop: "60px", paddingBottom: "50px"}}>
+        <Row style={{paddingTop: "60px", paddingBottom: "60px", borderBottom: "1px solid #e6e6e6"}}>
   
         <StaticImage
-        style={{maxWidth: "50px", maxHeight: "50px" ,  borderRadius: "100%", marginRight: "15px"}}
+        style={{maxWidth: "50px", maxHeight: "50px" ,  borderRadius: "100%", marginRight: "15px", marginTop: "10px"}}
  
         src="../images/doggo.jpg"
 
@@ -56,12 +56,12 @@ const isDarkTheme = theme === "black";
         alt="Profile picture"
       />
 
-        
         <div>
+        <div style={{paddingBottom: "5px"}}>
 Landon Grammer is a JavaScript enthusiast &
  web developer. He is building next generation
   JAM stack dApps and other fun stuff.
-  <br/>
+        </div>
         <a href="https://github.com/lpgcode">
         Check out his code on GitHub
         </a>

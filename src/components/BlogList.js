@@ -8,7 +8,8 @@ import { PageContainer2 } from "../styles/global.styles"
 export default function BlogList() {
   const blogData = useBlogData()
 
-  useEffect(() => {
+ useEffect(() => {
+    console.log("WHY");
     setTimeout(() => {
       anime({
         targets: '#dank',

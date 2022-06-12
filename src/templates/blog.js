@@ -43,11 +43,10 @@ export default function Blog(props) {
     <Layout>
       <PageContainer2 id="dank">
       <article >
-        <figure >
-        </figure>
+
         <div>
           <h3>{data.frontmatter.title}</h3>
-          <h3>{data.frontmatter.date}</h3>
+          <h5 style={{paddingBottom: "20px"}}>{data.frontmatter.date}</h5>
         </div>
         <div
         

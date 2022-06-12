@@ -75,14 +75,12 @@ const GlobalStyles = createGlobalStyle`
 
 body, html {
     box-sizing: border-box;
-    background: ${props => (props.theme === "white" ? "#15181c" : "white")};
-    color: ${props => (props.theme === "white" ? "white" : "black")};
     margin: 0;
     max-width: 100%;
     overflow-x: hidden;
     line-height: 1.3;
     letter-spacing: 0;
-    
+    transition: all 0.2s linear;
   
   }
 
@@ -105,7 +103,7 @@ body, html {
   h4,
   h5,
   h6 {
-
+    color: black;
     margin-top: var(--spacing-12);
     margin-bottom: var(--spacing-6);
     line-height: var(--lineHeight-tight);
@@ -117,23 +115,31 @@ body, html {
   h4,
   h5,
   h6 {
-
-    color: ${props => (props.theme === "black" ? "black" : "white")};
+    color:black;
   }
   
   h1 {
 
     font-size: var(--fontSize-6);
-    color: ${props => (props.theme === "black" ? "black" : "white")};
+    color: black;
     margin-top: 10px;
     margin-bottom: 0px;
     
   }
   
-  h1 > a {
-    color: ${props => (props.theme === "black" ? "black" : "white")};
-    text-decoration: none;
+
+
+  h1:hover,
+  h1:focus {
+    
+
+  }
+
   
+  h2:hover,
+  h2:focus {
+    text-decoration: none;
+    color: lightblue;
   }
   
   h2 > a,
@@ -142,10 +148,13 @@ body, html {
   h5 > a,
   h6 > a {
     text-decoration: none;
-    color: ${props => (props.theme === "black" ? "black" : "white")};
+   
   }
+ 
+  
   
   p {
+
     line-height: var(--lineHeight-relaxed);
     --baseline-multiplier: 0.179;
     --x-height-multiplier: 0.35;
@@ -206,7 +215,8 @@ body, html {
   
   
   a {
-    color: var(--color-primary);
+    color: #001f21;
+    font-weight: bold;
     text-decoration: none;
     
   }
@@ -217,6 +227,9 @@ body, html {
     color: lightblue;
   }
   
+  a:active {
+    color: darkpurple;
+  }
 `
 
 const PageContainer = styled.div`
@@ -282,14 +295,13 @@ const Button = styled.button`
 width: 100%;
 height: 40px;
 display: inline-block;
-border-radius: 3px;
+border-radius: 10px;
 margin: 0.2rem .5rem;
 margin-top: 10px;
 width: 3rem;
 background: (props.theme === "white" ? "white" : "black");
-color: ${props => (props.theme === "white" ? "white" : "black")};
-border: 2px solid ${props => (props.theme === "black" ? "#669a9e" : "#470035")};
 margin-bottom: 0px;
+border: none;
 cursor: pointer;
 @media (max-width: 726px) {
   margin-top: 40px;
