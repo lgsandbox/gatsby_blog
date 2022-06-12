@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { Row, SpacedRow, Button } from "../styles/global.styles"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { GlobalStyles } from "../styles/global.styles"
 import { MdBrightness5, MdBrightness4 } from "react-icons/md"
 
@@ -11,15 +11,14 @@ import { MdBrightness5, MdBrightness4 } from "react-icons/md"
 export default function Header(props) {
 
   const [theme, setTheme] = useState("black")
+  
   const themeHandler = () => {
-
-    if (theme === "black") {
-    
-      setTheme("white")
-    } 
-    else if (theme === "white") {
-      setTheme("black")
-}}
+  if (theme === "black") { setTheme("white") 
+  localStorage.setItem(theme, JSON.stringify(theme));
+} 
+  else if (theme === "white") { setTheme("black") 
+  localStorage.setItem(theme, JSON.stringify(theme));}
+}
 
 const isDarkTheme = theme === "black";
 

@@ -15,13 +15,13 @@ export default function Layout(props) {
     setTimeout(() => {
       anime({
         targets: '#dank',
-        easing: 'easeInOutSine',
+        easing: 'linear',
         opacity: 1,
         duration: 400
       });
     }, 400);
-    }
-)
+    } , [])
+
 
   const { title, description } = useSiteMetadata()
   return (
