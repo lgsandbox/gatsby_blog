@@ -31,7 +31,8 @@ export default function BlogList() {
           .filter(blog => blog.node.frontmatter.title !== "")
           .map(blog => {
             return (
-              <Link to={`/blog/${blog.node.fields.slug}`} key={blog.node.id}>
+              <>
+              <Link style={{fontWeight: "normal"}}to={`/blog/${blog.node.fields.slug}`} key={blog.node.id}>
                 <div>
                   <div>
              
@@ -43,6 +44,8 @@ export default function BlogList() {
                   </div>
                 </div>
               </Link>
+              
+                </>
             )
           })}
       </PageContainer2>
