@@ -50,9 +50,9 @@ const isDarkTheme = theme === "black";
         <StaticImage
         style={{maxWidth: "50px", maxHeight: "50px" ,  borderRadius: "100%", marginRight: "15px", marginTop: "10px"}}
  
-        src="../images/doggo.jpg"
-
-        quality={95}
+        src="../images/doggosmol.jpg"
+        placeholder= "none"
+        quality={90}
         alt="Profile picture"
       />
 
