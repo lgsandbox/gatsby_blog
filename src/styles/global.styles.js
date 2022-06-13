@@ -262,7 +262,7 @@ const Row = styled.div`
   `
 
   const ImageWrapper = styled.div`
-  opacity: 0;
+
   @media (max-width: 728px) {
     padding-top: 35px;
   }
@@ -321,18 +321,14 @@ cursor: pointer;
 }
 
   `
-const Vertical = styled.div`
+const Author = styled.div`
 
-
-@media (min-width: 530px) {
-  margin-top: auto;
-  margin-bottom: 7px;
-}
+opacity: 0;
 `
 
 export { Wrapper, Title, 
   Break, Container, Space, 
   GlobalStyles, PageContainer, Row,
-  SpacedRow, Vertical,
-  Button, PageContainer2, ImageWrapper
+  SpacedRow,
+  Button, PageContainer2, ImageWrapper, Author
 }
