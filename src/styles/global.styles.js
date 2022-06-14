@@ -1,9 +1,16 @@
 import styled from 'styled-components';
 import { createGlobalStyle } from "styled-components"
 
+export const lightTheme = {
+  body: '#f1f1f1',
+  text: '#121620'
+};
+export const darkTheme = {
+  body: '#121620',
+  text: '#f1f1f1'
+};
 
 const GlobalStyles = createGlobalStyle`
-
   
 :root {
   --maxWidth-none: "none";
@@ -74,6 +81,8 @@ const GlobalStyles = createGlobalStyle`
 
 
 body, html {
+    background: ${({ theme }) => theme.body};
+    color: ${({ theme }) => theme.text};
     box-sizing: border-box;
     margin: 0;
     max-width: 100%;
@@ -245,12 +254,10 @@ const PageContainer = styled.div`
   @media (max-width: 728px) {
     margin-left: 20px;
     margin-right: 20px;
-  }
-  
+  } 
 `
 const PageContainer2 = styled.div`
   opacity: 0;
-  
 `
 const Row = styled.div`
   display: flex;
@@ -258,34 +265,30 @@ const Row = styled.div`
   @media (max-width: 728px) {
     padding-top: 20px;
   }
-  
-  `
+`
 
-  const ImageWrapper = styled.div`
-
+const ImageWrapper = styled.div`
   @media (max-width: 728px) {
     padding-top: 35px;
   }
-  
-  `
-
+`
 
 const SpacedRow = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-padding-bottom: 20px;
-border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e6e6e6;
 `
 
 const Title = styled.h1`
   font-size: 1.5em;
   color: black;
-`;
+`
 
 const Wrapper = styled.section`
   display: flex;
-`;
+`
 
 const Break = styled.section`
   flex-basis: 100%;
@@ -295,40 +298,37 @@ const Container = styled.section`
   display:flex;
   justify-content: center;
   align-items: center;
-
 `
 const Space = styled.section`
   flex-direction: column;
   height: 50px;
   marging: 20px;
-
 `
 
-const Button = styled.button`
-width: 100%;
-height: 40px;
-display: inline-block;
-border-radius: 10px;
-margin: 0.2rem .5rem;
-margin-top: 10px;
-width: 3rem;
-background: (props.theme === "white" ? "white" : "black");
-margin-bottom: 0px;
-border: none;
-cursor: pointer;
-@media (max-width: 726px) {
-  margin-top: 40px;
-}
+const Button1 = styled.button`
+  width: 100%;
+  height: 40px;
+  display: inline-block;
+  border-radius: 10px;
+  margin: 0.2rem .5rem;
+  margin-top: 10px;
+  width: 3rem;
+  background: #c9c9c9;
+  margin-bottom: 0px;
+  border: none;
+  cursor: pointer;
+  @media (max-width: 726px) {
+    margin-top: 40px;
+  }
+`
 
-  `
 const Author = styled.div`
-
-opacity: 0;
+  opacity: 0;
 `
 
 export { Wrapper, Title, 
   Break, Container, Space, 
   GlobalStyles, PageContainer, Row,
   SpacedRow,
-  Button, PageContainer2, ImageWrapper, Author
+  Button1, PageContainer2, ImageWrapper, Author
 }

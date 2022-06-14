@@ -1,33 +1,32 @@
 import React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import { Row, SpacedRow, Button, ImageWrapper, Author } from "../styles/global.styles"
+import { Row, SpacedRow, Button1, ImageWrapper, Author } from "../styles/global.styles"
 import { useState, useEffect } from "react"
-import { GlobalStyles } from "../styles/global.styles"
+import { GlobalStyles, lightTheme, darkTheme } from "../styles/global.styles"
 import { MdBrightness5, MdBrightness4 } from "react-icons/md"
 import anime from "animejs"
-
+import { ThemeProvider } from "styled-components"
 
 export default function Header(props) {
 
- /**  
-  
-  const themeHandler = () => {
-  if (theme === "black") { setTheme("white") 
-  localStorage.setItem(theme, JSON.stringify(theme));
-} 
-  else if (theme === "white") { setTheme("black") 
-  localStorage.setItem(theme, JSON.stringify(theme));}
-}
-**/
-
-
-
-
-
-const [theme, setTheme] = useState("black")
-const isDarkTheme = theme === "black";
-
+const [theme, setTheme] = useState("light");
+const isDarkTheme = theme === "dark";
+const toggleTheme = () => {
+  const updatedTheme = isDarkTheme ? "light" : "dark";
+  setTheme(updatedTheme);
+  localStorage.setItem("theme", updatedTheme);
+};
+useEffect(() => {
+  const savedTheme = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (savedTheme && ["dark", "light"].includes(savedTheme)) {
+    setTheme(savedTheme);
+  } else if (prefersDark) {
+    setTheme("dark");
+  }
+}, []);
 useEffect(() => {
 
   setTimeout(() => {
@@ -41,24 +40,22 @@ useEffect(() => {
   } , [])
 
   return (
+    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
     <header>
       <nav
         role="navigation"
         aria-label="main navigation"
       >
+        <GlobalStyles />
         <SpacedRow>
         <Link to="/">
           <h1>Land.on The Open Web</h1>
         </Link>
         <div>
 
-        <Button >
-        {isDarkTheme ?
-          <MdBrightness4/> :
-          <MdBrightness5/>}
-        </Button>
-      
- 
+        <Button1 onClick={toggleTheme}>
+        {isDarkTheme ? <MdBrightness4/> : <MdBrightness5/>}
+      </Button1>
         </div>
         </SpacedRow>
         <Author id="image">
@@ -89,5 +86,6 @@ Landon Grammer is a JavaScript enthusiast &
 
       </nav>
     </header>
+    </ThemeProvider>
   )
 }

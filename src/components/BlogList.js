@@ -9,7 +9,6 @@ export default function BlogList() {
   const blogData = useBlogData()
 
  useEffect(() => {
-    console.log("WHY");
     setTimeout(() => {
       anime({
         targets: '#dank',
@@ -22,8 +21,6 @@ export default function BlogList() {
 
   function renderBlogData() {
 
-    
-      
     return (
       <PageContainer2 id="dank">
   
@@ -34,9 +31,6 @@ export default function BlogList() {
               <>
               <Link style={{fontWeight: "normal"}}to={`/blog/${blog.node.fields.slug}`} key={blog.node.id}>
                 <div>
-                  <div>
-             
-                  </div>
                   <div style={{paddingBottom: "5px"}}>
                     <h2>{blog.node.frontmatter.title}</h2>
                     <h3>{blog.node.frontmatter.date}</h3>
@@ -53,7 +47,7 @@ export default function BlogList() {
   }
   return (
     <section>
-      <ul className={"andanotherone"}>{renderBlogData()}</ul>
+      <ul>{renderBlogData()}</ul>
     </section>
   )
 }
