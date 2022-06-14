@@ -89,8 +89,7 @@ body, html {
     overflow-x: hidden;
     line-height: 1.3;
     letter-spacing: 0;
-    transition: all 0.2s linear;
-  
+
   }
 
 
