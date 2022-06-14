@@ -17,6 +17,7 @@ const toggleTheme = () => {
   setTheme(updatedTheme);
   localStorage.setItem("theme", updatedTheme);
 };
+
 useEffect(() => {
   const savedTheme = localStorage.getItem("theme");
   const prefersDark = window.matchMedia &&
@@ -27,6 +28,9 @@ useEffect(() => {
     setTheme("dark");
   }
 }, []);
+
+
+
 useEffect(() => {
 
   setTimeout(() => {
