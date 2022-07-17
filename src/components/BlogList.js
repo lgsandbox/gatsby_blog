@@ -1,11 +1,15 @@
 import React from "react"
 import { Link } from "gatsby"
 import useBlogData from "../static_queries/useBlogData"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import anime from "animejs"
-import { PageContainer2 } from "../styles/global.styles"
+import { PageContainer2, Card, Break, Space } from "../styles/global.styles"
+import { ThemeProvider } from "styled-components"
+import { GlobalStyles, lightTheme, darkTheme } from "../styles/global.styles"
 
 export default function BlogList() {
+
+
   const blogData = useBlogData()
 
  useEffect(() => {
@@ -19,9 +23,12 @@ export default function BlogList() {
     }, 400);
     } , [])
 
+
   function renderBlogData() {
+    
 
     return (
+
       <PageContainer2 id="dank">
   
         {blogData
@@ -29,20 +36,24 @@ export default function BlogList() {
           .map(blog => {
             return (
               <>
-              <Link style={{fontWeight: "normal"}}to={`/blog/${blog.node.fields.slug}`} key={blog.node.id}>
-                <div>
-                  <div style={{paddingBottom: "5px"}}>
+                      
+              <Link style={{fontWeight: "normal",}}to={`/blog/${blog.node.fields.slug}`} key={blog.node.id}>
+              <Card style={{marginBottom: "20px"}}>
+              <div style={{padding: "15px"}}>
+                  <div style={{paddingBottom: "10px",}}>
                     <h2>{blog.node.frontmatter.title}</h2>
                     <h3>{blog.node.frontmatter.date}</h3>
-                    <p>{blog.node.excerpt}</p>
+                    <p style={{color: 'black'}}>{blog.node.excerpt}</p>
                   </div>
-                </div>
+                  </div>
+                </Card>
               </Link>
-              
+              <Space/>
                 </>
             )
           })}
       </PageContainer2>
+
     )
   }
   return (

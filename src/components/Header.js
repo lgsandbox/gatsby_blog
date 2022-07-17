@@ -1,12 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import { Row, SpacedRow, Button1, ImageWrapper, Author } from "../styles/global.styles"
+import { Row, SpacedRow, Button1, ImageWrapper, Author, Space } from "../styles/global.styles"
 import { useState, useEffect } from "react"
 import { GlobalStyles, lightTheme, darkTheme } from "../styles/global.styles"
 import { MdBrightness5, MdBrightness4 } from "react-icons/md"
 import anime from "animejs"
 import { ThemeProvider } from "styled-components"
+
 
 export default function Header(props) {
 
@@ -58,12 +59,12 @@ useEffect(() => {
         <div>
 
         <Button1 onClick={toggleTheme}>
-        {isDarkTheme ? <MdBrightness4/> : <MdBrightness5/>}
+        {isDarkTheme ? <MdBrightness5/> : <MdBrightness4/>}
       </Button1>
         </div>
         </SpacedRow>
-        <Author id="image">
-        <Row style={{paddingTop: "60px", paddingBottom: "60px", borderBottom: "1px solid #e6e6e6"}}>
+        <Author id="image" style={{paddingBottom: "30px"}}>
+        <Row style={{paddingTop: "50px", paddingBottom: "50px", borderBottom: "2px solid #E4E4E4",}}>
           <ImageWrapper>
         <StaticImage
         style={{maxWidth: "50px", maxHeight: "50px" ,  borderRadius: "100%", marginRight: "15px", marginTop: "10px"}}
@@ -90,6 +91,7 @@ Landon Grammer is a JavaScript enthusiast &
 
       </nav>
     </header>
+
     </ThemeProvider>
   )
 }

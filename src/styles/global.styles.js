@@ -3,11 +3,20 @@ import { createGlobalStyle } from "styled-components"
 
 export const lightTheme = {
   body: '#f1f1f1',
-  text: '#121620'
+  text: '#121620',
+  link : '#121620',
+  hover: 'lightblue',
+  paragraph: '#121620',
+  header: '#121620',
 };
 export const darkTheme = {
-  body: '#121620',
-  text: '#f1f1f1'
+  body: '	#252526',
+  text: '#f1f1f1',
+  header: '#d63160',
+ 
+  link: '#d63160',
+  hover: 'lightpink',
+  paragraph: '#f1f1f1',
 };
 
 const GlobalStyles = createGlobalStyle`
@@ -108,12 +117,11 @@ body, html {
   
   h1,
   h2,
+  h3,
   h4,
   h5,
   h6 {
-    color: black;
-    margin-top: var(--spacing-12);
-    margin-bottom: var(--spacing-6);
+    color: var(--color-heading);
     line-height: var(--lineHeight-tight);
     letter-spacing: -0.025em;
   }
@@ -123,13 +131,18 @@ body, html {
   h4,
   h5,
   h6 {
-    color:black;
+    color: ${({ theme }) => theme.header };
   }
+  
+  h6 {
+    line-height: 200px;
+  }
+  
   
   h1 {
 
     font-size: var(--fontSize-6);
-    color: black;
+    color: ${({ theme }) => theme.header};
     margin-top: 10px;
     margin-bottom: 0px;
     
@@ -146,8 +159,7 @@ body, html {
   
   h2:hover,
   h2:focus {
-    text-decoration: none;
-    color: lightblue;
+
   }
   
   h2 > a,
@@ -158,16 +170,14 @@ body, html {
     text-decoration: none;
    
   }
- 
-  
-  
-  p {
 
+  p {
+    
+    color: ${({ theme }) => theme.header};
     line-height: var(--lineHeight-relaxed);
     --baseline-multiplier: 0.179;
     --x-height-multiplier: 0.35;
-    margin: var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0);
-    padding: var(--spacing-0);
+
   }
   
   ul,
@@ -221,9 +231,8 @@ body, html {
   
 
   
-  
   a {
-    color: #001f21;
+    color: ${({ theme }) => theme.link};
     font-weight: bold;
     text-decoration: none;
     
@@ -232,12 +241,18 @@ body, html {
   a:hover,
   a:focus {
     text-decoration: none;
-    color: lightblue;
+    color: ${({ theme }) => theme.hover};
   }
   
   a:active {
-    color: darkpurple;
+    color: black;
   }
+
+  p {
+    color: ${({ theme }) => theme.paragraph};
+  }
+
+
 `
 
 const PageContainer = styled.div`
@@ -251,8 +266,8 @@ const PageContainer = styled.div`
     margin-right: 20%;
   }
   @media (max-width: 728px) {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
   } 
 `
 const PageContainer2 = styled.div`
@@ -277,7 +292,7 @@ const SpacedRow = styled.div`
   flex-direction: row;
   justify-content: space-between;
   padding-bottom: 20px;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 2px solid #E4E4E4;
 `
 
 const Title = styled.h1`
@@ -300,25 +315,33 @@ const Container = styled.section`
 `
 const Space = styled.section`
   flex-direction: column;
-  height: 50px;
-  marging: 20px;
+  height: 30px;
+  margin: 10px;
 `
 
 const Button1 = styled.button`
   width: 100%;
-  height: 40px;
+  height: 50px;
   display: inline-block;
   border-radius: 10px;
   margin: 0.2rem .5rem;
   margin-top: 10px;
   width: 3rem;
-  background: #c9c9c9;
+  background: ${({ theme }) => theme.hover};
   margin-bottom: 0px;
   border: none;
   cursor: pointer;
   @media (max-width: 726px) {
     margin-top: 40px;
   }
+`
+
+const Card = styled.div`
+background: #e5e9ea;
+border-radius: 10px;
+&:hover { background: #d9dadb; };
+
+
 `
 
 const Author = styled.div`
@@ -328,6 +351,6 @@ const Author = styled.div`
 export { Wrapper, Title, 
   Break, Container, Space, 
   GlobalStyles, PageContainer, Row,
-  SpacedRow,
+  SpacedRow, Card,
   Button1, PageContainer2, ImageWrapper, Author
 }
