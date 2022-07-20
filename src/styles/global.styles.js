@@ -21,16 +21,16 @@ export const lightTheme = {
 export const darkTheme = {
 
   body: '	#1c1a1b',
-  button: 'linear-gradient(#d36e79 60%, #90d5ec );',
+  button: 'linear-gradient(#e8d092 60%, #90d5ec );',
   card: '#363d36',
   cardhover: '#5b6b5b',
-  date: '#6ecbd3',
-  header: '#d36e79',
-  hover: 'lightpink',
-  link: '#00e585',
+  date: '#bdebff',
+  header: '#bdebff',
+  hover: '#e8d092',
+  link: '#bdebff',
   paragraph: '#f1f1f1',
   text: '#f1f1f1',
-  title: '#d36e79',
+  title: '#e8d092',
 
 };
 

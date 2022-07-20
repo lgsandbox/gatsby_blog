@@ -80,7 +80,7 @@ export default function Layout(props) {
                     </Link>
                   <div>
                     <Button onClick={toggleTheme}>
-                      {isDarkTheme ? <BsSunFill style={{color: "yellow", fontSize: "22px"}}/> : <BsMoonStarsFill style={{color: "white", fontSize: "16px"}}/>}
+                      {isDarkTheme ? <BsSunFill style={{color: "darkorange", fontSize: "22px"}}/> : <BsMoonStarsFill style={{color: "white", fontSize: "16px"}}/>}
                     </Button>
                   </div>
                   </SpacedRow>
