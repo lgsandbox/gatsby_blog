@@ -38,7 +38,7 @@ export default function Layout(props) {
 
     else if (prefersDark) {
 
-      setTheme("dark");
+      setTheme("light");
 
       }
 
