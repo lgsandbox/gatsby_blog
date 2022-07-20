@@ -28,7 +28,7 @@ export default function Layout(props) {
 
     const savedTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches;
+    window.matchMedia('(prefers-color-scheme: light)').matches;
 
     if (savedTheme && ["dark", "light"].includes(savedTheme)) {
 
