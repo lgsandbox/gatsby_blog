@@ -1,7 +1,7 @@
 {
   "name": "forestry-starter-blog-gatsby",
   "private": true,
-  "description": "A simple starter blog to get up and developing quickly with Forestry & Gatsby",
+  "description": "A simple starter blog to get up and developing quickly with Forestry & Gatsby on Fleek",
   "license": "MIT",
   "version": "0.1.0",
   "author": "Landon Grammer",
@@ -59,6 +59,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/lpgcode/final_fleek_blog.git"
+    "url": "https://github.com/lpgcode/gatsbyjs-forestry-styled"
   }
 }

@@ -11,12 +11,7 @@ body {
 
 /* 
 
-  this is a flash of unstyled theme/font fix
-  that works with these older plugins and version of gatsby 
-  if you upgrade dependencies to modern versions this does not work
-  for content, but fonts are okay. theme will still flash
-  should you decide to mess with gatsby dependencies...
-
-  good luck :D
-
+  transition fixes fouc 
+  import fonts fixes fouf
+  
  */

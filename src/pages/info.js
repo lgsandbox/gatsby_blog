@@ -3,7 +3,9 @@ import Layout from "../components/Layout"
 import useSiteMetaData from "../static_queries/useSiteMetadata"
 
 export default function Info() {
+
   const { infoData } = useSiteMetaData()
+
   return (
     <Layout page="info" bgColor={"white"}>
       <section>
@@ -33,4 +35,5 @@ export default function Info() {
       </section>
     </Layout>
   )
+  
 }
