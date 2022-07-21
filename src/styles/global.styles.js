@@ -6,7 +6,7 @@ import { createGlobalStyle } from "styled-components"
 export const lightTheme = {
 
   body: '#f1f1f1',
-  button: 'linear-gradient(#070B34 60%, #e5e9ea )',
+  button: 'linear-gradient(#070B34  65%, #90d5ec ); ',
   card: '#e5e9ea',
   cardhover: '#d9dadb',
   date: '#121620',
@@ -21,8 +21,8 @@ export const lightTheme = {
 export const darkTheme = {
 
   body: '	#1c1a1b',
-  button: 'linear-gradient(#e8d092 60%, #90d5ec );',
-  card: '#363d36',
+  button: 'linear-gradient(#e8d092 65%, #90d5ec );',
+  card: '#1b2d2c',
   cardhover: '#5b6b5b',
   date: '#bdebff',
   header: '#bdebff',
@@ -221,9 +221,6 @@ const Button = styled.button`
   border: none;
   cursor: pointer;
 
-  @media (max-width: 726px) {
-    margin-top: 40px;
-  }
 `
 
 const Card = styled.div`
