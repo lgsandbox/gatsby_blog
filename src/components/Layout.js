@@ -102,7 +102,7 @@ export default function Layout(props) {
                         <div style={{paddingBottom: "5px"}}>
                         Landon Grammer is a JavaScript enthusiast &
                         web developer. He is building next generation
-                        JAM stack dApps and other fun stuff.
+                        JAMstack dApps and other fun stuff.
                         </div>
                         <a href="https://github.com/lpgcode">
                         Check out his code on GitHub
